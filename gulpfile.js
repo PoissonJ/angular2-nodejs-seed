@@ -3,8 +3,8 @@ var gulp = require('gulp');
 var gulpTypescript = require('gulp-typescript');
 var gulpSourcemaps = require('gulp-sourcemaps');
 
-var addDev = 'assets/app';
-var addProd = 'public/js/app';
+var appDev = 'assets/app';
+var appProd = 'public/js/app';
 var vendor = 'public/js/vendor';
 
 var tsconfig = gulpTypescript.createProject('tsconfig.json');
@@ -14,35 +14,35 @@ gulp.task('build-ts', function() {
     .pipe(gulpSourcemaps.init()) // inits source maps
     .pipe(gulpTypescript(tsconfig)) // compile ts files
     .pipe(gulpSourcemaps.write())  // must be after ts compilation
-    .pipe(gulp.dest(addProd)); // where to write the compiled ts files to
+    .pipe(gulp.dest(appProd)); // where to write the compiled ts files to
 });
 
 gulp.task('build-copy', function() {
-  return gulp.src([appDev + '**/*.html', appDev + '**/*.htm', appDev + '**/*.css']); // load all css and html files
+  return gulp.src([appDev + '**/*.html', appDev + '**/*.htm', appDev + '**/*.css']) // load all css and html files
     .pipe(gulp.dest(appProd)); // Move to specified folder
 });
 
 gulp.task('vendor', function() {
-  gulp.src('node_modules/@angular/**'); // load all angular files
+  gulp.src('node_modules/@angular/**') // load all angular files
     .pipe(gulp.dest(vendor + '/@angular')); // Move to specified folder
 
-  gulp.src('node_modules/core-js/**');
+  gulp.src('node_modules/core-js/**')
     .pipe(gulp.dest(vendor + '/core-js'));
 
-  gulp.src('node_modules/reflect-metadata/**');
+  gulp.src('node_modules/reflect-metadata/**')
     .pipe(gulp.dest(vendor + '/reflect-metadata'));
 
-  gulp.src('node_modules/rxjs/**');
+  gulp.src('node_modules/rxjs/**')
     .pipe(gulp.dest(vendor + '/rxjs'));
 
-  gulp.src('node_modules/systemjs/**');
+  gulp.src('node_modules/systemjs/**')
     .pipe(gulp.dest(vendor + '/systemjs'));
 
-  gulp.src('node_modules/zone.js/**');
+  gulp.src('node_modules/zone.js/**')
     .pipe(gulp.dest(vendor + '/zone.js'));
 });
 
-gulp.task('watch', funciton() {
+gulp.task('watch', function() {
   gulp.watch(appDev + '**/*.ts', ['build-ts']); // compile ts when it's changed
   gulp.watch(appDev + '**/*.{html, htm, css}', ['build-copy']);
 });
