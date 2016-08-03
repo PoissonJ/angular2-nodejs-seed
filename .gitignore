@@ -1,5 +1,5 @@
 typings
-public/js/**/*.js
+public/js/
 public/**/*.map
 node_modules
 jspm_packages
