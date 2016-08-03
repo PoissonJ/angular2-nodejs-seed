@@ -7,7 +7,7 @@
     "postinstall": "typings install",
     "typings": "typings",
     "vendor": "gulp vendor",
-    "gulp": "gulp",
+    "gulp": "gulp"
   },
   "dependencies": {
     "@angular/common": "2.0.0-rc.4",
