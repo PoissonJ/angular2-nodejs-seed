@@ -30,16 +30,22 @@ gulp.task('vendor', function() {
     .pipe(gulp.dest(vendor + '/core-js'));
 
   gulp.src('node_modules/reflect-metadata/**')
-    .pipe(gulp.dest(vendor + '/reflect-metadata'));
+    .pipe(gulp.dest(vendor + '/reflect-metadata/'));
 
   gulp.src('node_modules/rxjs/**')
-    .pipe(gulp.dest(vendor + '/rxjs'));
+    .pipe(gulp.dest(vendor + '/rxjs/'));
 
   gulp.src('node_modules/systemjs/**')
-    .pipe(gulp.dest(vendor + '/systemjs'));
+    .pipe(gulp.dest(vendor + '/systemjs/'));
+
+  gulp.src('node_modules/ng2-bootstrap/**')
+    .pipe(gulp.dest(vendor + '/ng2-bootstrap/'));
+
+  gulp.src('node_modules/moment/**')
+    .pipe(gulp.dest(vendor + '/moment/'));
 
   gulp.src('node_modules/zone.js/**')
-    .pipe(gulp.dest(vendor + '/zone.js'));
+    .pipe(gulp.dest(vendor + '/zone.js/'));
 });
 
 gulp.task('watch', function() {
