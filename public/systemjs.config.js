@@ -8,7 +8,7 @@ var packages = {
   'rxjs': { defaultExtension: 'js' } // Only default Extension, no boot file
 };
 
-var packageNames - [
+var packageNames = [
   '@angular/common',
   '@angular/compiler',
   '@angular/core',

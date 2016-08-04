@@ -18,7 +18,7 @@ gulp.task('build-ts', function() {
 });
 
 gulp.task('build-copy', function() {
-  return gulp.src([appDev + '**/*.html', appDev + '**/*.htm', appDev + '**/*.css']) // load all css and html files
+  return gulp.src([appDev + '/**/*.html', appDev + '/**/*.htm', appDev + '/**/*.css']) // load all css and html files
     .pipe(gulp.dest(appProd)); // Move to specified folder
 });
 

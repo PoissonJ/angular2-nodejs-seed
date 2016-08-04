@@ -1,5 +1,5 @@
 /// <reference path="../../typings.d.ts" />
-import { boostrap } from '@angular/platform-browser-dynamic';
+import { bootstrap } from '@angular/platform-browser-dynamic';
 
 import { AppComponent } from './app.component';
 
