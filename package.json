@@ -35,8 +35,10 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "del": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-typescript": "^2.13.6"
+    "gulp-typescript": "^2.13.6",
+    "systemjs-builder": "^0.15.26"
   }
 }
