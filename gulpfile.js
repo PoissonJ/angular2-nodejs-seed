@@ -24,7 +24,7 @@ gulp.task('build-copy', function() {
     .pipe(gulp.dest(appProd)); // Move to specified folder
 });
 
-gulp.tack('clean', function() {
+gulp.task('clean', function() {
   del(appProd + '/**/*');
 });
 
@@ -60,3 +60,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['watch', 'build-ts', 'build-copy', 'vendor']);
+gulp.task('build', ['build-ts', 'build-copy', 'vendor']);
