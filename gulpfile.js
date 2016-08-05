@@ -3,6 +3,8 @@ var gulp = require('gulp');
 var gulpTypescript = require('gulp-typescript');
 var gulpSourcemaps = require('gulp-sourcemaps');
 
+var del = require('del');
+
 var appDev = 'assets/app';
 var appProd = 'public/js/app';
 var vendor = 'public/js/vendor';
@@ -20,6 +22,10 @@ gulp.task('build-ts', function() {
 gulp.task('build-copy', function() {
   return gulp.src([appDev + '/**/*.html', appDev + '/**/*.htm', appDev + '/**/*.css']) // load all css and html files
     .pipe(gulp.dest(appProd)); // Move to specified folder
+});
+
+gulp.tack('clean', function() {
+  del(appProd + '/**/*');
 });
 
 gulp.task('vendor', function() {
