@@ -6,10 +6,11 @@ import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: 'app.component.html',
+  styleUrls: ['app.css'],
   directives: [AlertComponent]
 })
 export class AppComponent {
-  public alerts:Array<Object> = [
+  public alerts: Array<Object> = [
     {
       type: 'danger',
       msg: 'Oh snap! Change a few things up and try submitting again.'
@@ -21,11 +22,11 @@ export class AppComponent {
     }
   ];
 
-  public closeAlert(i:number):void {
+  public closeAlert(i: number): void {
     this.alerts.splice(i, 1);
   }
 
-  public addAlert():void {
+  public addAlert(): void {
     this.alerts.push({msg: 'Another alert!', type: 'warning', closable: true});
   }
 }
