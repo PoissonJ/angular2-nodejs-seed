@@ -49,7 +49,7 @@ gulp.task('build-ts', function() {
 });
 
 gulp.task('build-copy', function() {
-  return gulp.src([appDev + '/**/*.html', appDev + '/**/*.htm', appDev + '/**/*.css']) // load all css and html files
+  return gulp.src([appDev + '/**/*.html', appDev + '/**/*.css']) // load all css and html files
     .pipe(gulp.dest(appProd)); // Move to specified folder
 });
 
@@ -94,7 +94,8 @@ gulp.task('bs-reload', function() {
 
 gulp.task('watch', function() {
   gulp.watch(appDev + '/**/*.ts', ['build-ts', browserSync.reload]); // compile ts when it's changed
-  gulp.watch(appDev + '/**/*.{html, htm, css}', ['build-copy', browserSync.reload]);
+  gulp.watch(appDev + '/**/*.html', ['build-copy', browserSync.reload]);
+  gulp.watch(appDev + '/**/*.css',  ['build-copy', browserSync.reload]);
 });
 
 
