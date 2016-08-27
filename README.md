@@ -4,5 +4,5 @@
 
 - Clone repo
 - `npm install`
-- `gulp` will start a browersync session
+- `gulp` will start a browersync session and open browser to `localhost:4000`
 
