@@ -1,5 +1,7 @@
 # Seed starter project for MEAN stack using Angular 2
 
+## Updated to RC5!
+
 ## Local installation instructions
 
 - Clone repo
