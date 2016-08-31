@@ -8,6 +8,7 @@ import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
   templateUrl: 'app.component.html',
   styleUrls: ['app.css'],
   directives: [AlertComponent]
+  
 })
 export class AppComponent {
   public alerts: Array<Object> = [
